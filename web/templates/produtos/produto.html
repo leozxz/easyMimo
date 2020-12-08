@@ -1,0 +1,78 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{% static 'style/login.css' %}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <title>Mimo Store | CP</title>
+  </head>
+  <body>
+     <div class="container" style="position: absolute; top: 5%; left: 10%">
+         <h1 style="color: white; font-size: 25px">Cadastro de produtos</h1>
+                <form action="/cadastroP/" method="POST">
+                    {% csrf_token %}
+                    <div1>
+                        {% csrf_token %}
+                        <h7 style="color: whitesmoke">Nome</h7>
+                        <div class="row"><input type="text" id="ds_n" name="ds_n" placeholder="Nome" size="50"></div>
+                        <br>
+                        <h7 style="color: whitesmoke">Tamanho</h7>
+                        <div class="row"><input type="text" id="ds_tamanho" name="ds_tamanho" placeholder="PP / P / M / G / GG" size="50"></div>
+                        <br>
+                        <h7 style="color: whitesmoke">Cor</h7>
+                        <div class="row"><input type="text" id="ds_cor" name="ds_cor" placeholder="Azul / Branco/ Preto / Rosa / Vermelho" size="50"></div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                         </div>
+                                    <div class="col-sm-6">
+                                         </div>
+                                </div>
+
+                                <h7 style="color: whitesmoke">Data de entrada</h7>
+                                <div class="row"><input type="date" id="dt_entrada" name="dt_entrada"></div>
+                                <br>
+                                <h7 style="color: whitesmoke">Código do produto</h7>
+                                <div class="row"><input type="text" id="id_produto" name="id_produto" onblur="calcular();" placeholder="Codigo do produto" size="50"></div>
+                                <br>
+                                <h7 style="color: whitesmoke">Valor de compra</h7>
+                                <div class="row"><input type="number" step="any" id="vl_preco_custo" name="vl_preco_custo" onblur="calcular();" placeholder="Valor de compra" size="50"></div>
+                                <br>
+                                <h7 style="color: whitesmoke">Valor de venda</h7>
+                                <div class="row"><input type="number" step="any" id="vl_preco_venda" name="vl_preco_venda" placeholder="Valor de venda" size="50"></div>
+
+                            </div>
+                            <div class="col-sm-8" style="position: absolute; left: 45%; top: 0%">
+                                <h1 style="color: whitesmoke; font-size: 25px">Galeria de imagens</h1>
+                                <div class="row">
+                                    <div class="col-md-4 jumbotron" style="text-align: center; opacity: 0.8">IMG</div>
+                                    <div class="col-md-4 offset-md-1 jumbotron" style="text-align: center; opacity: 0.8">IMG</div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-4 jumbotron" style="text-align: center; opacity: 0.8">IMG</div>
+                                    <div class="col-md-4 offset-md-1 jumbotron" style="text-align: center; opacity: 0.8">IMG</div>
+                                </div>
+                                <input type="file">
+                                <input type="submit" value="Cadastrar" class="btn btn-dark" style="position: absolute; top: 116%; left: 21.5%; font-size: 20px">
+                                <a href="/"><button class="btn btn-dark" style="position: absolute; top: 116%; left: 39.5%; font-size: 20px">Consultar</button></a>
+                                <button class="btn btn-light" style="color: #000000; width: 150px; position: absolute; top: 130%; left: 28%"><a href="/" style="text-decoration: none; color: black">Tela inicial</a></button>
+                            </div>
+                        </div>
+                    </div1>
+                </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+</html>
